@@ -1,0 +1,32 @@
+body{
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+}
+.content{
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(39, 36, 36);
+    min-height: 30px;
+    color: aliceblue;
+}
+
+.buttonClass{
+    margin: 5px;
+    padding: 15px;
+}
+#add{
+    background-color: green;
+}
+#remove{
+    background-color: yellow;
+}
+#clear{
+    background-color: red;
+}
+button{
+    padding: 10px;
+    border-radius: 5%;
+    cursor: pointer;
+    font-weight: bold;
+}
