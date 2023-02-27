@@ -3,23 +3,21 @@ const content = document.getElementById("newContent");
 // Get the paragraphs with the class newParagraph to manipulate them 
 const contents = document.getElementsByClassName("newParagraph");
 // Get the user input
-input = document.getElementById("userInput")
+input = document.getElementById("userInput");
 // Set a counter to use as an Id for each item
-let count = 0
+let count = 0;
 // Check if there's a saved value for the counter to be used upon reload the page
-localStorage.length? count = localStorage.getItem("count"): null
+localStorage.length? count = localStorage.getItem("count"): null;
 // Check if there's a saved items in the localStorage to be used upon reload the page
 // It's better tu use it as a function but leave it for now
 if (localStorage.length> 0 ){
     for(i=0;i<=localStorage.length;i++){
         const newParagraph = document.createElement("p");
         newParagraph.innerText = localStorage.getItem(i);
-        // console.log(localStorage.getItem(userInput))
         content.appendChild(newParagraph);
         newParagraph.className = "newParagraph";
     }
 }
-// let localLen = localStorage.length
 /* ----------- */
 // Function to add items
 function addParagraph() {
@@ -29,17 +27,17 @@ function addParagraph() {
         // Creat a new element
         const newParagraph = document.createElement("p");
         // Add the text to the new created element
-        newParagraph.innerText = `Task ${count+1}: ${userInput}`
+        newParagraph.innerText = `Task ${count+1}: ${userInput}`;
         // Add a class for the new created element
         newParagraph.className = "newParagraph";
         // Append the new created element to the div 
         content.appendChild(newParagraph);
         // Add value to the local storage
-        localStorage.setItem(count,userInput)
+        localStorage.setItem(count,userInput);
         // Increas the counter
-        count++
+        count++;
         // Add the counter to localStorage
-        localStorage.setItem("count",count)
+        localStorage.setItem("count",count);
         // Update the value for the input to show the place holder
         input.value = "";
     } else {
@@ -55,11 +53,11 @@ function removeParagraph(){
         const removedParagraph = contents[contents.length - 1];
         content.removeChild(removedParagraph);
         // Remove the last child in the div from the localStorage
-        lastItemKey = localStorage.getItem("count")
-        localStorage.removeItem(lastItemKey -1)
+        lastItemKey = localStorage.getItem("count");
+        localStorage.removeItem(lastItemKey -1);
         // Upgrade the counter in the localStorage
-        count--
-        lastItemKey = localStorage.setItem("count",count)
+        count--;
+        lastItemKey = localStorage.setItem("count",count);
         
     } else {
         alert("You didn't have new paragraphs yet");
@@ -78,5 +76,5 @@ function clearAll() {
         alert(`You didn't have new paragraphs yet`)
     }
     // Reset the counter
-    count = 0
+    count = 0;
 }
